@@ -34,7 +34,6 @@ std::string ify(const std::string& s) {
         if (!(count++ % 3) && (count < s.length()))
             result += '.';
     }
-    }
     return result;
 }
 int main(){
