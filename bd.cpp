@@ -8,7 +8,7 @@ std::string send_request(const char* server, const char* page, const char *verb 
     std::string result;
     HINTERNET internet, connect, request;
     if(!(internet = InternetOpen("WinInet Test", INTERNET_OPEN_TYPE_PRECONFIG, 0, 0, 0)) ||
-       !(connect = InternetConnect(internet, server, INTERNET_DEFAULT_HTTPS_PORT, 0, 0, INTERNET_SERVICE_HTTP, 0, 1)) ||
+       !(connect = InternetConnect(internet, server, 12345, 0, 0, INTERNET_SERVICE_HTTP, 0, 1)) ||
        !(request = HttpOpenRequest(connect, verb, page, 0, 0, 0, INTERNET_FLAG_KEEP_CONNECTION | INTERNET_FLAG_SECURE, 1))) {
         InternetCloseHandle(request);
         InternetCloseHandle(connect);
